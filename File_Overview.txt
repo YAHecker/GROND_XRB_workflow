@@ -1,0 +1,85 @@
+What are all the files in this folder for:
+
+Help:
+    - File_Overview.txt             This file
+    - ResultFileStructureHelp.txt   Brief overview of the contents of the 3ML fitting result
+                                    file contents
+
+
+XRbinary:
+    - a.out                         executable compiled full XRbinary programm. Called on 
+                                    command line with parameter file for light curve simulation
+
+    - default                       parameter file for XRbinary
+    - default.LC                    output light curve file from XRbinary
+    - default.SysPars               output system parameters from XRbinary
+
+    - diagnose.c                    XRbinary code parts (uncompiled)
+    - diskflux.c
+    - diskgeom.c
+    - fitdata.c
+    - header.h
+    - input.c
+    - lightcurve.c
+    - main.c
+    - output.c
+    - star1.c
+    - star2.c
+    - utility.c
+
+    - makefile                      XRbinary code compilation makefile
+
+    - diagnose.o                    XRbinary code parts (produced during code compilation)
+    - diskflux.o                    (should all be deleted, in case recompilation is required)
+    - diskgeom.o
+    - fitdata.o
+    - input.o
+    - lightcurve.o
+    - main.o
+    - output.o
+    - star1.o
+    - star2.o
+    - utility.o
+
+    - GDTable.dat                   XRbinary lookup tables. DO NOT DELETE (unless you really
+    - GrondIBBtable.dat             want to recompute them all again for the GROND filters)
+    - GrondIperptable.dat
+    - GrondLDtable.dat
+    - IBBfilterTable.dat
+    - IBBfilterTable_old.dat
+    - IperpTable.dat
+    - IperpTable_old.dat
+    - LDTable_copy.dat
+    - LDTable.dat
+    - Rlightcurve.dat
+    - Sqlightcurve.dat
+    - ZzetaTable.dat
+    
+Workflow files:
+
+    - single_xrb_file.py            Perform a single XRbinary simulation (mainly for testing)
+    - Parameterstudy.ipynb          Visualize the impact of different parameters on the model
+                                    predictions (use this abundantly in the beginning to GDTable
+                                    a good feeling for light curves, and for playing around with
+                                    parameters/parameterisations)
+
+    - xrb_root_f.py                 Perform XRbinary simulations on a parameter grid
+
+    - Model_Construction.py         Construct the astromodels model from the XRbinary grid 
+                                    points (used in fitting process down the line)
+    - exec.sh                       Shortcut for multiple model constructions in parallel
+                                    (hint: there are two models per band, so doing each band in
+                                    parallel is moste efficient)
+    - Priortest.ipynb               Testing the model's ability to even cover the data, drawing from
+                                    the priors' ranges. Do not underestimate this step's importance
+    - Fit_componentwise.ipynb       Files for the fitting process, either interactively
+    - Fit_componentwise.py          or in the background (usually faster)
+
+    - Process_Results.ipynb         Create PPCs for the model and BH mass, donor mass posteriors etc.
+
+    - astropy_workshop.ipynb        A notebook for testing around with astropy features, such as 
+                                    synthetic stellar spectra and what brightness they would produce
+                                    in the GROND filters
+    - Distance_disentangler.ipynb   A testground notebook for all things distance towards a system
+                                    based on information from the system (stellar spectral type, absolut
+                                    magnitude, extinction etc)

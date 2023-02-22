@@ -1,0 +1,14 @@
+
+
+What's in the MN fits files:
+
+with open(filename) as f:
+    dat = f[1].data
+    cols = f[1].columns
+    head = f[0].header
+
+lines: dat[0 through 6], individual parameters
+
+colums: NAME , (best fit) VALUE, NEGATIVE_ERROR, POSITIVE_ERROR, ERROR, UNIT (nothing), COVARIANCE, SAMPLES
+[which can be shown by cols, cols.info() or cols.names]
+
